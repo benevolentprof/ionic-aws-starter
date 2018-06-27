@@ -5,7 +5,7 @@ After my fixes, the app runs, though the avatar image on the Account
 page is still broken. The AWS Amplify module 
 returns a URL to a file that doesn't exist, which leads to a 404.
 Is this correct behaviour? The doesn't seem to be anything on 
-[Ampify issues](https://github.com/aws/aws-amplify/issues?utf8=%E2%9C%93&q=label%3AStorage+) 
+[Amplify issues](https://github.com/aws/aws-amplify/issues?utf8=%E2%9C%93&q=label%3AStorage+) 
 and I have asked a 
 [question on StackOverflow](https://stackoverflow.com/questions/51070118/what-is-returned-by-storage-get-in-aws-amplify-when-the-file-doesnt-exist).
 And I can't upload an image, some 403 and CORS errors.
