@@ -1,3 +1,18 @@
+This project is a repaired version of the [Ionic AWS Starter](https://github.com/ionic-team/starters/tree/master/ionic-angular/official/aws). 
+
+I created using the following command.
+
+```bash
+ionic start myApp aws
+```
+
+
+
+
+Original README below
+----------------------
+
+
 # Ionic AWS Starter
 
 This Ionic starter comes with a pre-configured [AWS Mobile Hub](https://aws.amazon.com/mobile/) project set up to use Amazon DynamoDB, S3, Pinpoint, and Cognito.
@@ -24,9 +39,6 @@ npm install -g awsmobile-cli
 
 To create a new Ionic project using this AWS Mobile Hub starter, run
 
-```bash
-ionic start myApp aws
-```
 
 Which will create a new app in `./myApp`.
 
