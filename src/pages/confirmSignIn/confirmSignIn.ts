@@ -13,7 +13,7 @@ const logger = new Logger('ConfirmSignIn');
   templateUrl: 'confirmSignIn.html'
 })
 export class ConfirmSignInPage {
-  
+
   public code: string;
   public user: any;
 
@@ -22,7 +22,7 @@ export class ConfirmSignInPage {
   }
 
   confirm() {
-    Auth.confirmSignIn(this.user, this.code)
+    Auth.confirmSignIn(this.user, this.code, null)
       .then(() => this.navCtrl.push(TabsPage))
       .catch(err => logger.debug('confirm error', err));
   }

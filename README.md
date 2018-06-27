@@ -1,11 +1,55 @@
-This project is a repaired version of the [Ionic AWS Starter](https://github.com/ionic-team/starters/tree/master/ionic-angular/official/aws). 
+This project is a repaired version of the [Ionic AWS Starter](https://github.com/ionic-team/starters/tree/master/ionic-angular/official/aws) 
 
-I created using the following command.
+
+It was created using the following `ionic start` and repaired 
+using instructions from an [issue in their github repo](https://github.com/ionic-team/starters/issues/88). 
+Don't try to run the project (`ionic serve`) until quite far in the process.
 
 ```bash
 ionic start myApp aws
 ```
 
+### Installing AWSMobile CLI
+
+```
+npm install -g awsmobile-cli
+```
+
+
+### Creating AWS Mobile Hub Project
+
+Create an account on [AWS Mobile Hub](https://aws.amazon.com/mobile/) 
+
+Use `mobile-hub-project.zip` to [configure the project on AWS Mobile Hub](https://aws.amazon.com/blogs/mobile/ionic-web-hybrid-mobile-starter-project/).
+
+Once the project is created follow Add new app-> Javascript -> Add. Step 2 will give you a command to execute 
+
+Tip: Keep this Amazon Resource Number. I don't know where to find it again.
+
+### Connect your app to AWS Mobile Hub
+
+```bash
+cd <project folder>
+awsmobile init <Amazon Resource Number>
+```
+
+Follow the prompts and accept the defaults.
+
+
+### Install dependencies
+
+
+```bash
+npm install
+```
+
+The following commands are needed due to breaking changes in [aws-amplify(https://github.com/aws/aws-amplify) 0.4.6. They may not be needed in the future.
+
+```bash
+npm install --save-dev @types/zen-observable
+npm install --save-dev @types/paho-mqtt
+npm install --save-dev @types/node
+```
 
 
 
