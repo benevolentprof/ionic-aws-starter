@@ -3,11 +3,13 @@ This project is a repaired version of the [Ionic AWS Starter](https://github.com
 
 It was created using the following `ionic start` and repaired 
 using instructions from an [issue in their github repo](https://github.com/ionic-team/starters/issues/88). 
-Don't try to run the project (`ionic serve`) until quite far in the process.
 
 ```bash
 ionic start myApp aws
 ```
+
+**Warning**: Don't try to run the project (`ionic serve`) until quite far in the process.
+
 
 ### Installing AWSMobile CLI
 
@@ -18,22 +20,75 @@ npm install -g awsmobile-cli
 
 ### Creating AWS Mobile Hub Project
 
-Create an account on [AWS Mobile Hub](https://aws.amazon.com/mobile/) 
-
-Use `mobile-hub-project.zip` to [configure the project on AWS Mobile Hub](https://aws.amazon.com/blogs/mobile/ionic-web-hybrid-mobile-starter-project/).
-
-Once the project is created follow Add new app-> Javascript -> Add. Step 2 will give you a command to execute 
-
-Tip: Keep this Amazon Resource Number. I don't know where to find it again.
-
-### Connect your app to AWS Mobile Hub
+Init AWSMobile project. Follow the prompts and accept all the defaults.
 
 ```bash
-cd <project folder>
-awsmobile init <Amazon Resource Number>
+awsmobile init
+
+Please tell us about your project:
+? Where is your project's source directory:  src
+? Where is your project's distribution directory that stores build artifacts:  www
+? What is your project's build command:  npm run-script build
+? What is your project's start command for local test run:  ionic serve
+
+? What awsmobile project name would you like to use:  ionic-aws-project
+
+Successfully created AWS Mobile Hub project: ...
 ```
 
-Follow the prompts and accept the defaults.
+
+### Configuring AWS Mobile Hub Project
+
+The starter project gives instructions on how to do this from the 
+command line, but some have reported bugs with 
+[awsmobile](https://github.com/ionic-team/starters/issues/46), 
+so here's how to do it in the browser. 
+
+#### NoSQL Database
+
+Enable.
+
+Create a custom table named `tasks`. Make it Private. 
+
+Accept `userId` as Partition key.
+
+Add an attribute `taskId` with type string and make it a Sort key
+  
+Add an attribute `category` with type string.
+
+Add an attribute `description` with type string.
+
+Add an attribute `created` with type number.
+
+Add an index `DateSorted` with userId as Partition key and taskId as Sort key.
+
+#### User Sign-In
+
+Turn this on and select verification through email.
+
+Set your password requirements.
+
+Set Multi-Factor Authentication if you wish.
+
+#### User File Storage
+
+Turn this on.
+
+#### Hosting and Streaming
+
+Turn this on.
+
+
+### Integrating Changes into App
+
+Go back to the command line for your project.
+
+```bash
+awsmobile pull
+```
+
+Answer yes, when asked "? sync corresponding contents in backend/ with #current-backend-info/"
+
 
 
 ### Install dependencies
@@ -50,6 +105,13 @@ npm install --save-dev @types/zen-observable
 npm install --save-dev @types/paho-mqtt
 npm install --save-dev @types/node
 ```
+
+### Run the app
+
+```bash
+ionic serve
+```
+
 
 
 
