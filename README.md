@@ -1,13 +1,15 @@
 This project is a repaired version of the [Ionic AWS Starter](https://github.com/ionic-team/starters/tree/master/ionic-angular/official/aws) 
 The app is intended to work with [AWS Mobile Hub](https://aws.amazon.com/mobile/). 
 
-After my fixes, the app runs, though there's an error that shows up 
-on the console when viewing the Account page. The AWS Amplify module 
+After my fixes, the app runs, though the avatar image on the Account 
+page is still broken. The AWS Amplify module 
 returns a URL to a file that doesn't exist, which leads to a 404.
 Is this correct behaviour? The doesn't seem to be anything on 
 [Ampify issues](https://github.com/aws/aws-amplify/issues?utf8=%E2%9C%93&q=label%3AStorage+) 
 and I have asked a 
 [question on StackOverflow](https://stackoverflow.com/questions/51070118/what-is-returned-by-storage-get-in-aws-amplify-when-the-file-doesnt-exist).
+And I can't upload an image, some 403 and CORS errors.
+
 I think I'm going to shuffle over to Firebase now, 
 [just like everybody else](https://ionicframework.com/survey/2017#tools).
 
@@ -116,9 +118,8 @@ The following commands are needed due to breaking changes in
 They may not be needed in the future.
 
 ```bash
-npm install --save-dev @types/zen-observable
-npm install --save-dev @types/paho-mqtt
-npm install --save-dev @types/node
+npm install @types/zen-observable
+npm install @types/paho-mqtt
 ```
 
 ### Run the app
